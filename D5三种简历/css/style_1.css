@@ -1,0 +1,9 @@
+.basic span,a{
+    margin-left:5px; 
+    margin-right:30px; 
+}
+
+.detail span{
+    display:block;
+    line-height: 30px;
+}

@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    width: 100%;
+    height: 40px;
+    background-color: #333333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#logo {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;    
+}
+
+#user {
+    top: 1px;
+    float: right;
+}
+
+#user li {
+    float: left;
+    margin: 0 10px;
+}
+
+#user li a{
+    color: white;
+}
+
+.banner {
+    width: 100%;
+    height: 180px;
+    background-color: #66BB33;
+}
+
+.widget{
+    position: relative;
+    padding-top: 120px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.widget li{
+    width: 30px;
+    height: 35px;
+    margin: 0 5px;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;  
+    line-height: 35px;
+    border: 1px solid #000;
+    background-color: rgba(255,255,255,0.6);
+
+}
+
+.widget li:nth-child(2) {
+    height: 50px;
+    background-color: rgba(255,255,255,0.9);
+}
+
+
+.menu {
+    height: 70px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.menu ul li{
+    width: 120px;
+    height: 45px;
+    margin-top: 25px;
+    float: left;
+    padding: 10px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+
+.menu ul li.active {
+    border-bottom: 1px solid white;
+    background: white;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5px;
+    font-size: 0.9em;
+}
+
+.content div {
+    height: 80px;
+    padding: 80px;
+    margin:5px 10px 5px 0;
+    border: 1px solid rgb(221, 221, 221);
+    text-align: center;
+    flex: 1 220px;
+    display: inline-block;
+}
+
+#content, div:nth-of-type(1) {
+    flex: 2 250px;
+}
+
+#content, div:nth-of-type(2) {
+    flex: 2 250px;
+}
+
+footer {
+    height: 80px;
+    color: white;
+    padding-top: 10px;
+    margin-top: 10px;
+    background-color: dimgray;
+    text-align: center;
+}

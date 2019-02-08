@@ -1,0 +1,411 @@
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#s1 {
+    position: fixed;
+    height: 100%;
+    width: 100px;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #1d2531;
+}
+
+#s1 .app img {
+    height: 60%;
+    width: 60%;
+    padding: 5px 0;
+}
+
+#s1 .settings {
+    position: relative;
+    bottom: calc(330px - 100%);
+}
+
+#s2 {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    padding: 10px 20px;
+    margin-left: 100px;
+    color: rgba(255, 255, 255, 0.75);
+    background-color: #222c3c;
+}
+
+#s2 .menu {
+    margin: 20px 0;
+}
+
+#s2 .menu div:first-child {
+    clear: both;
+}
+
+#s2 .title {
+    display: inline-block;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+#s2 .settings {
+    float: right;
+    padding-top: 2px;
+}
+
+#s2 .option div{
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+
+#s2 .option div div{
+    display: inline-block;
+    margin-top:10px;
+}
+
+#s2 .option div div{
+    display: inline-block;
+}
+
+#s2 .option .active {
+    color: rgb(255, 255, 255);
+}
+
+#s2 .menu:nth-child(2) .option > div div{
+    padding-left: 3px;
+    display: inline-block;
+}
+
+#s2 .noti {
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+}
+
+.note {
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 1em;
+    background-color: #2a9ef6;
+}
+
+#s2 hr {
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.warning {
+    background-color: red;
+}
+
+#s2 .bottom {
+    position: fixed;
+    width: 210px;
+    bottom:30px;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: white;
+}
+
+#goal {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+#progressbar {
+    height: 5px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#progressbar > div {
+    width: 30%;
+    height: 5px;
+    background-color: #8566e6;
+}
+
+#s3 {
+    margin: 0 0 20px 350px;
+}
+
+#top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+
+#top h1 {
+    margin-left: 20px;
+    font-weight: 400;
+    opacity: 0.66;
+}
+
+#user {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+#user > div {
+    margin: 0 20px;
+}
+
+#authority {
+    font-size: 0.9rem;
+    color: darkgrey;
+}
+
+#user img:last-child {
+    margin-right: 20px;
+}
+
+.inbox {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);   
+}
+
+.inbox .search {
+    height: 40px;
+    width: 260px;
+    line-height: 35px;
+    padding-left:10px; 
+    border: 1px solid rgba(0, 0, 0, 0.15); 
+    margin: 12px auto;
+    background-image: url(assets/Search%20icon.png);
+    background-repeat: no-repeat;
+    background-position: 230px 10px;
+}
+
+#s3 .message {
+    height: 125px;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+#s3 .active{
+    border-left: 3px solid #2399f1;
+}
+
+#s3 .message:first-of-type {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.circle {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+    background-color: #2a9ef6; 
+}
+
+.name {
+    font-weight: 600;
+    color: #585d68;
+}
+
+.name-blue {
+    color: #2399f1;
+}
+
+#s3 .message .name {
+    position: relative;
+    left: 55px;
+    top: -45px;
+}
+
+#s3 .message .company {
+    position: relative;
+    left: 55px;
+    top: -45px;
+    color: darkgray;
+}
+
+.time {
+    color: #7f8fa4;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#s3 .message .time {
+    position: relative;
+    float: right;
+    top: -87px;
+}
+
+#s3 .note {
+    position: relative;
+    float: right;
+    top: -70px;
+    color: white;
+}
+
+.message p {
+    position: relative;
+    color: #858890;
+    top: -40px;
+}
+
+#s3 .content {
+    position: relative;
+    float: right;
+    margin-left: 300px;
+    top: -120%;
+}
+
+#s3 .show {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.show .circle {
+    margin-left: 10px;
+    background-color: #1bb934;
+}
+
+.func {
+    display: flex;
+}
+
+.b-l-r {
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.b-r {
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.br-l {
+    border-radius: 5px 0 0 5px;
+}
+
+.br-r {
+    border-radius: 0 5px 5px 0;
+}
+
+.icon-group {
+    height: 34px;
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    list-style: none;
+}
+
+.icon-func {
+    width: 32px;
+    height: 32px;
+    padding: 7px;
+    display: block;
+    background-color: #f3f5f8;
+}
+
+.icon-group .arrow {
+    padding: 11px;
+}
+
+.conversation{
+    padding: 20px 20px 0 20px;
+}
+
+.page {
+    padding: 0 20px;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    margin-left: 20px;
+    line-height: 30px;
+    color: #7f8fa4;
+    font-weight: 600;
+}
+
+.part {
+    padding-bottom: 20px; 
+    display: flex;
+    align-items: flex-start;
+    
+}
+
+.mes {
+    padding-left: 15px;
+}
+
+.mes .name {
+    display: inline-block;
+}
+
+.mes .time {
+    display: inline-block;
+    margin-left: 5px;
+}
+.mes p {
+    font-size: 0.8rem;
+    color: #858890;
+}
+
+.attachment {
+    margin: -10px 0 10px 60px;
+}
+
+.division {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.division div{
+    width: 40%;
+    height: 0%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.division span {
+    color: #c3cbd5;
+    font-weight: 400;
+    margin: 0 10px;
+}
+
+.new span {
+    color: #2a9ef6;
+}
+
+.new div{
+    border-bottom: 1px solid #2a9ef6;
+}
+
+.input {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input i {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px 0 0 10px;
+    background: url(assets/Add%20icon.png) no-repeat center;
+    background-color: #f3f5f8;
+}
+
+.input input {
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}

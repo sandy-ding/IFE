@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <select id="year-select">
+        </select>
+
+        <select id="month-select">
+        </select>
+
+        <select id="day-select">
+        </select>
+
+        <select id="hour-select">
+        </select>
+
+        <select id="minute-select">
+        </select>
+
+        <select id="second-select">
+        </select>
+
+        <p id="result-wrapper"></p>
+        <script>
+            var yearS = document.getElementById("year-select");
+            var monthS = document.getElementById("month-select");
+            var dayS = document.getElementById("day-select");
+            var hourS = document.getElementById("hour-select");
+            var minuteS = document.getElementById("minute-select");
+            var secondS = document.getElementById("second-select");
+            var selects = document.querySelectorAll("select");
+            var result = document.getElementById("result-wrapper");
+            
+            init();
+            selects.forEach(function(select){
+                select.onchange = getTime;
+            })
+            
+            
+            function init(){
+                setYear();
+                setMonth();
+                setDay();
+                setTime();
+                getTime();
+            }
+            
+            function setYear(){
+                for (var i = 0; i < 10; i++){
+                    y = i + 2012
+                    yearS.options.add(new Option(y, y));
+                }
+                yearS.selectedIndex = 0;
+            }
+            
+            function setMonth(){
+                for (var i = 0; i <= 11; i++){
+                    monthS.options.add(new Option(i+1, i));
+                }
+                monthS.selectedIndex = 0;
+            }
+            
+            function setDay(){
+                var year = yearS.options[yearS.selectedIndex].value;
+                var month = monthS.options[monthS.selectedIndex].text;
+                switch (month){
+                    case "1":
+                    case "3":
+                    case "5":
+                    case "7":
+                    case "8":
+                    case "10":
+                    case "12":
+                        for (var i = 1; i <= 31; i++){
+                            dayS.options.add(new Option(i, i));
+                        };
+                        break;
+                    case "2":
+                        if (year % 4 == 0){
+                            for (var i = 1; i <= 28; i++){
+                                dayS.options.add(new Option(i, i));
+                            };
+                        } else {
+                            for (var i = 1; i <= 29; i++){
+                                dayS.options.add(new Option(i, i));
+                            };
+                        }
+                        break;
+                    case "4":
+                    case "6":
+                    case "10":
+                    case "12":
+                        for (var i = 1; i <= 30; i++){
+                            dayS.options.add(new Option(i, i));
+                        };
+                        break;
+                }
+                dayS.selectedIndex = 0;
+            }
+            
+            function setTime(){
+                for (var i = 0; i <= 23; i++){
+                    var text;
+                    i < 10 ? text = "0" + i : text = i;  
+                    hourS.options.add(new Option(text, i));
+                }
+                for (var i = 0; i <= 59; i++){ 
+                    minuteS.options.add(new Option(i, i));
+                    secondS.options.add(new Option(i, i));
+                }
+                hourS.selectedIndex = 0;
+                minuteS.selectedIndex = 0;
+                secondS.selectedIndex = 0;
+            }
+            
+            function getTime(){
+                var year = yearS.options[yearS.selectedIndex].value;
+                var monthIndex = monthS.options[monthS.selectedIndex].value;
+                var month = monthS.options[monthS.selectedIndex].text;
+                var day = dayS.options[dayS.selectedIndex].value;
+                var hour = hourS.options[hourS.selectedIndex].value;
+                var minute = minuteS.options[minuteS.selectedIndex].value;
+                var second = secondS.options[secondS.selectedIndex].value;
+                var time = new Date(year, monthIndex, day, hour, minute, second);
+                var week = ["日", "一", "二", "三", "四", "五", "六"]
+                var weekday = week[time.getDay()];
+                var now = new Date();
+                var timeText = "现在距离 "+year+"年"+month+"月"+day+"日星期"+weekday+" "+hour+":"+minute+":"+second
+                var diff = calTime(time, now);
+                result.innerHTML = timeText + diff;
+                
+            }
+            
+            function calTime(time, now){
+                if (time < now){
+                    var text = " 已经过去 "
+                } else {
+                    var text = " 还有 "
+                }
+                var millis = Math.abs(time - now);
+                millis = millis / 1000;
+                var seconds = Math.floor(millis % 60);
+                millis = millis / 60;
+                var minutes = Math.floor(millis % 60);
+                millis = millis / 60;
+                var hours = Math.floor(millis % 24);
+                var days = Math.floor(millis / 24);
+                return text+days+" 天 "+hours+" 小时 "+minutes+" 分 "+seconds+"秒";
+            }
+            
+        </script>
+    </body>
+</html>
